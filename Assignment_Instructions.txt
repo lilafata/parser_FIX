@@ -1,0 +1,26 @@
+Instructions -
+
+The Chicago Mercantile Exchange (CME) [1] publishes a file from its public FTP site [2] that can be used to
+determine information for receiving market data for futures [3] contracts. The file is a FIX protocol [4]
+file [5] that contains security definitions [6] for future, spread, and option contracts.
+
+With the version of the secdef.dat file provided, please answer the following questions using python:
+
+1. How many instruments of each security type (tag 167) exist?
+2. How many futures (tag 167) instruments exist in each product complex (tag 462)?  
+3. What are the names (tag 55) of the earliest four expirations (tag 200) for the futures (tag 167) instruments
+   with asset (tag 6937) 'GE' and have zero legs (tag 555)?
+
+[1] http://www.cmegroup.com/
+[2] http://www.cmegroup.com/confluence/display/EPICSANDBOX/MDP+3.0+-+FTP+Site+Information
+[3] https://en.wikipedia.org/wiki/Futures_contract
+[4] http://www.fixtradingcommunity.org/pg/structure/tech-specs/fix-protocol%20
+[4 alternate, because 4 requires a login now] https://www.onixs.biz/fix-dictionary/4.2/
+[5] ftp://ftp.cmegroup.com/SBEFix/Production/secdef.dat.gz
+[6] http://www.cmegroup.com/confluence/display/EPICSANDBOX/MDP+3.0+-+Security+Definition
+
+
+Assignment -
+
+Write your own FIX parser for reading secdef.dat.  Do not use the pandas module or similar data-processing modules.
+
